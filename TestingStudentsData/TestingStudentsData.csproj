@@ -62,7 +62,10 @@
   <ItemGroup>
     <Compile Include="AppContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionType.cs" />
     <Compile Include="Table\Chapter.cs" />
+    <Compile Include="Table\Question.cs" />
+    <Compile Include="Table\Testing.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
