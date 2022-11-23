@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="TestingStudentsApp.Controls.TestWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TestingStudentsApp.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="64"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="48"/>
+            </Grid.RowDefinitions>
+            <!-- Область информационной панели -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="192" />
+                </Grid.ColumnDefinitions>
+                <!-- Область с информацией -->
+                <Border Margin="2" BorderBrush="Black" BorderThickness="1" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <!-- Область с глобальной информацией -->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="TestName" Margin="2"  Text="Название теста" FontSize="16" VerticalAlignment="Center"/>
+                        </Grid>
+                        <!-- Область с локальной информацией -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="QuestName" Margin="2" Text="Вопрос №9999" FontSize="16" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="QuestInfo" Margin="2" Grid.Column="1"  Text="Дано ответов: 0 из 9999" TextWrapping="Wrap"/>
+                        </Grid>
+                    </Grid>
+                </Border>
+                <!-- Область с таймером -->
+                <Border Grid.Column="1" Margin="2" BorderBrush="Black" BorderThickness="1" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="64"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="timer_clock.png" />
+                        <TextBlock Grid.Column="1" Margin="2" Text="00:00:00" VerticalAlignment="Center" FontSize="28"/>
+
+                    </Grid>
+                </Border>
+            </Grid>
+            <!-- Область с вопросом -->
+            <Border Grid.Row="1" Margin="2" BorderBrush="Black" BorderThickness="1" >
+                <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="Описание вопроса" FontSize="14"/>
+            </Border>
+            <!-- Область с ответами -->
+            <Border Grid.Row="2" Margin="2" BorderBrush="Black" BorderThickness="1" >
+                <TextBlock TextWrapping="Wrap" Text="Варианты ответа" FontSize="14"/>
+            </Border>
+            <!-- Область с управляющими кнопками -->
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Следующий вопрос" Grid.Column="3" Margin="2"/>
+                <Button Content="Предыдущий вопрос" Grid.Column="2" Margin="2"/>
+                <Button Content="Завершить тестирование" Margin="2"/>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>
